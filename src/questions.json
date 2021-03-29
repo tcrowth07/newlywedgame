@@ -1,0 +1,164 @@
+[
+    {
+        "questionId" : 1,
+        "question" : "{singular} has the day off and an empty house. How does {singlular} spend the day?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 2,
+        "question" : "What did you do for your last date?",
+        "questionType" : "OpenCouple",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 3,
+        "question" : "Who spends more time in the shower?",
+        "questionType" : "Which",
+        "intimicyLevel" : 2
+    },
+    {
+        "questionId" : 4,
+        "question" : "Who’s handier?",
+        "questionType" : "Which",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 5,
+        "question" : "{partner} takes your hand and pulls you to the dance floor. They say that the DJ is playing your song. What song is it?",
+        "questionType" : "OpenCouple",
+        "intimicyLevel" : 2
+    },
+    {
+        "questionId" : 6,
+        "question" : "Where did you go on your first date?",
+        "questionType" : "OpenCouple",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 7,
+        "question" : "Who said “I love you” first?",
+        "questionType" : "Which",
+        "intimicyLevel" : 2
+    },
+    {
+        "questionId" : 8,
+        "question" : "When and where was your first kiss?",
+        "questionType" : "OpenCouple",
+        "intimicyLevel" : 2
+    },
+    {
+        "questionId" : 9,
+        "question" : "Who is {possesive} celebrity crush?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 10,
+        "question" : "Who is a better kisser?",
+        "questionType" : "Which",
+        "intimicyLevel" : 2
+    },
+    {
+        "questionId" : 11,
+        "question" : "Which one of you is a better driver?",
+        "questionType" : "Which",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 12,
+        "question" : "Who is the best cook?",
+        "questionType" : "Which",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 13,
+        "question" : "What’s {possesive} favorite TV show?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 14,
+        "question" : "What’s {possesive} favorite movie?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 15,
+        "question" : "What would {possesive} ideal date be?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 2
+    },
+    {
+        "questionId" : 16,
+        "question" : "What is their pet name for you?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 17,
+        "question" : "What was the first movie you saw together?",
+        "questionType" : "OpenCouple",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 18,
+        "question" : "What’s {possesive} favorite band and/or artist?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 19,
+        "question" : "What is {possesive} favorite junk food?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 20,
+        "question" : "What is {possesive} favorite ice cream flavor?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 21,
+        "question" : "How does {possesive} like their steak cooked?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 22,
+        "question" : "If you won the lottery, what’s the first thing you’d buy together?",
+        "questionType" : "OpenCouple",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 23,
+        "question" : "Name {possesive} favorite restaurant.",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 24,
+        "question" : "How does {possesive} like their eggs in the morning?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 25,
+        "question" : "Who is more adventurous?",
+        "questionType" : "Which",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 26,
+        "question" : "What color are {possesive} eyes?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 27,
+        "question" : "What was {possesive} first job?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    }
+]
