@@ -1,5 +1,6 @@
-import "./App.css";
 import { useHistory } from "react-router-dom";
+import Button from "./Components/Button"
+import Input from "./Components/Input"
 
 function App() {
     let history = useHistory();
@@ -13,15 +14,13 @@ function App() {
           }); 
     }
   return (
-    <>
-      <label htmlFor="player1Name">Player 1 Name</label>
-      <input type="text" id="player1Name" />
+    <div className="text-center lg:mx-52 md:mx-52 sm:mx-52 m-10">
+      <Input type="text" id="player1Name">Player 1 Name</Input>
       <br />
-      <label htmlFor="player2Name">Player 2 Name</label>
-      <input type="text" id="player2Name" />
+      <Input type="text" id="player2Name">Player 2 Name</Input>
       <br />
-      <button onClick={() => {startGame()}}>Play Single Device Mode</button>
-    </>
+      <Button disabled={false} bgColor="yellow-500" onClick={() => {startGame()}}>Start Game</Button>
+    </div>
   );
 }
 export default App;

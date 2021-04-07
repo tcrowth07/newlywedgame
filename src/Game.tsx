@@ -1,11 +1,18 @@
-import "./App.css";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import questions from "./questions.json";
 import OpenIndividualQuestion from "./Questions/OpenIndividual";
 import OpenCoupleQuestion from "./Questions/OpenCouple";
 import WhichQuestion from "./Questions/Which";
+import ScoreScreen from "./ScoreScreen";
+
+import Button from "./Components/Button"
 
 function Game(props: any) {
+  let history = useHistory();
+  if (props.location.state === undefined) {
+    history.push("/")
+  } 
   const [game, setGame] = useState<boolean>(false);
   const [gameQuestions, setGameQuestions] = useState<Array<Question>>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
@@ -13,18 +20,19 @@ function Game(props: any) {
   const [scoreScreen, setScoreScreen] = useState<boolean>(false);
   const [player1, setPlayer1] = useState<Player>({
     playerNum: 1,
-    name: props.location.state.player1Name,
+    name: props.location.state?.player1Name,
     answers: [],
     guesses: [],
     score: 0,
   });
   const [player2, setPlayer2] = useState<Player>({
     playerNum: 2,
-    name: props.location.state.player2Name,
+    name: props.location.state?.player2Name,
     answers: [],
     guesses: [],
     score: 0,
   });
+  
 
   function startGame(): void {
     setGameQuestions(chooseRandomQuestions(10));
@@ -38,7 +46,7 @@ function Game(props: any) {
       if (
         randomQuestions.findIndex(
           (item: Question) => item === questions[randomInt]
-        )
+        ) === -1
       ) {
         randomQuestions.push(questions[randomInt]);
       }
@@ -74,7 +82,10 @@ function Game(props: any) {
       temp.score += 10000;
       setPlayer2(temp);
     }
-    if (gameQuestions[currentQuestionIndex].questionType === "OpenCouple" || gameQuestions[currentQuestionIndex].questionType === "Which") {
+    if (
+      gameQuestions[currentQuestionIndex].questionType === "OpenCouple" ||
+      gameQuestions[currentQuestionIndex].questionType === "Which"
+    ) {
       if (
         player1.guesses[currentQuestionIndex] ===
         player2.guesses[currentQuestionIndex]
@@ -87,14 +98,9 @@ function Game(props: any) {
         setPlayer2(temp2);
       }
     }
-    console.log(player1)
-    console.log(player2)
   }
 
-  function storeOpenIndividualAnswers(
-    answerSelf: string | null,
-    guessPartner: string
-  ) {
+  function storeAnswers(answerSelf: string | null, guessPartner: string): void {
     if (player1Turn) {
       let tempPlayer1 = player1;
       tempPlayer1.answers.push(answerSelf);
@@ -111,6 +117,10 @@ function Game(props: any) {
     startGame();
   }
 
+  if (currentQuestionIndex > 9) {
+    history.push({ pathname: "/gameover", state: { player1, player2 } });
+  }
+
   let currentPlayer = "";
   if (player1Turn) {
     currentPlayer = player1.name;
@@ -119,65 +129,59 @@ function Game(props: any) {
   }
 
   return (
-    <>
+    <div className="main">
       {!game ? (
         <h6>Loading game...</h6>
       ) : (
         <>
           {scoreScreen ? (
-            <>
-              <h4>Score</h4>
-              <h5>
-                {player1.name}: {player1.score}
-              </h5>
-              <h5>
-                {player2.name}: {player2.score}
-              </h5>
-              <button onClick={() => setScoreScreen(false)}>Continue</button>
-            </>
+            <ScoreScreen
+              player1Turn={player1Turn}
+              currentQuestionIndex={currentQuestionIndex}
+              player1={player1}
+              player2={player2}
+              setScoreScreen={(score: boolean) => setScoreScreen(score)}
+            />
           ) : (
-            <>
-              <h3>{currentPlayer}'s turn</h3>
-              {gameQuestions[currentQuestionIndex].questionType ===
+            <div className="m-5">
+              <h3 className="bg-green-300 mb-7 rounded-md p-5 text-center text-white shadow-md font-bold text-3xl">{currentPlayer}'s turn</h3>
+              {gameQuestions[currentQuestionIndex]?.questionType ===
                 "OpenIndividual" && (
                 <OpenIndividualQuestion
                   question={gameQuestions[currentQuestionIndex]}
                   player1Turn={player1Turn}
                   handleChange={(answerSelf: string, guessPartner: string) =>
-                    storeOpenIndividualAnswers(answerSelf, guessPartner)
+                    storeAnswers(answerSelf, guessPartner)
                   }
                   player1={player1}
                   player2={player2}
                 />
               )}
-              {gameQuestions[currentQuestionIndex].questionType ===
+              {gameQuestions[currentQuestionIndex]?.questionType ===
                 "OpenCouple" && (
                 <OpenCoupleQuestion
                   question={gameQuestions[currentQuestionIndex]}
                   player1Turn={player1Turn}
-                  handleChange={(answer: string) =>
-                    storeOpenIndividualAnswers(null, answer)
-                  }
+                  handleChange={(answer: string) => storeAnswers(null, answer)}
                   player1={player1}
                   player2={player2}
                 />
               )}
-              {gameQuestions[currentQuestionIndex].questionType === "Which" && (
+              {gameQuestions[currentQuestionIndex]?.questionType ===
+                "Which" && (
                 <WhichQuestion
                   question={gameQuestions[currentQuestionIndex]}
                   player1Turn={player1Turn}
-                  handleChange={(answer: string) =>
-                    storeOpenIndividualAnswers(null, answer)
-                  }
+                  handleChange={(answer: string) => storeAnswers(null, answer)}
                   player1={player1}
                   player2={player2}
                 />
               )}
-            </>
+            </div>
           )}
         </>
       )}
-    </>
+    </div>
   );
 }
 

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "../Questions.css"
+import Button from "../Components/Button"
+
 function OpenIndividualQuestion(props: any) {
   const [answer, setAnswer] = useState<string>("");
   //const [currentPlayerName, setCurrentPlayerName] = useState<string>(props.player1Turn ? props.player1.name : props.player2.name);
@@ -25,14 +27,9 @@ function OpenIndividualQuestion(props: any) {
         {otherPlayerName}
       </button>
       <br />
-      <button
-        onClick={() => {
-          props.handleChange(answer);
-          setAnswer("");
-        }}
-      >
+      <Button className="ml-3" bgColor="yellow-500" onClick={() => { props.handleChange(answer); setAnswer("")}}>
         Next
-      </button>
+      </Button>
     </>
   );
 }

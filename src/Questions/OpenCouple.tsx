@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "../Components/Button"
 function OpenIndividualQuestion(props: any) {
   const [answer, setAnswer] = useState<string>("");
   return (
@@ -10,9 +11,9 @@ function OpenIndividualQuestion(props: any) {
         onChange={(e) => setAnswer(e.target.value)}
       />
       <br />
-      <button onClick={() => { props.handleChange(answer); setAnswer("")}}>
+      <Button className="ml-3" bgColor="yellow-500" onClick={() => { props.handleChange(answer); setAnswer("")}}>
         Next
-      </button>
+      </Button>
     </>
   );
 }

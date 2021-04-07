@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from "../Components/Button"
+import ParagraphInput from "../Components/ParagraphInput"
 
 function OpenIndividualQuestion(props: any) {
   const [answerSelf, setAnswerSelf] = useState<string>("");
@@ -24,24 +26,23 @@ function OpenIndividualQuestion(props: any) {
 
   return (
     <>
-      <label>{makeQuestion(props.question, true)}</label>
-      <br />
-      <textarea
+      <ParagraphInput
+        label={makeQuestion(props.question, true)}
         value={answerSelf}
-        onChange={(e) => setAnswerSelf(e.target.value)}
+        onChange={(e : any) => setAnswerSelf(e.target.value)}
+        placeholder={makeQuestion(props.question, true)}
       />
       <br />
-      <br />
-      <label>{makeQuestion(props.question, false)}</label>
-      <br />
-      <textarea
+      <ParagraphInput
+        label={makeQuestion(props.question, false)}
         value={guessPartner}
-        onChange={(e) => setGuessPartner(e.target.value)}
+        onChange={(e : any) => setGuessPartner(e.target.value)}
+        placeholder={makeQuestion(props.question, false)}
       />
       <br />
-      <button onClick={() => { props.handleChange(answerSelf, guessPartner); clear()}}>
+      <Button className="ml-3" bgColor="yellow-500" onClick={() => { props.handleChange(answerSelf, guessPartner); clear()}}>
         Next
-      </button>
+      </Button>
     </>
   );
 }
