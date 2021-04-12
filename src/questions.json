@@ -1,11 +1,5 @@
 [
     {
-        "questionId" : 1,
-        "question" : "{singular} has the day off and an empty house. How does {singlular} spend the day?",
-        "questionType" : "OpenIndividual",
-        "intimicyLevel" : 1
-    },
-    {
         "questionId" : 2,
         "question" : "What did you do for your last date?",
         "questionType" : "OpenCouple",
@@ -22,12 +16,6 @@
         "question" : "Who’s handier?",
         "questionType" : "Which",
         "intimicyLevel" : 1
-    },
-    {
-        "questionId" : 5,
-        "question" : "{partner} takes your hand and pulls you to the dance floor. They say that the DJ is playing your song. What song is it?",
-        "questionType" : "OpenCouple",
-        "intimicyLevel" : 2
     },
     {
         "questionId" : 6,
@@ -52,12 +40,6 @@
         "question" : "Who is {possesive} celebrity crush?",
         "questionType" : "OpenIndividual",
         "intimicyLevel" : 1
-    },
-    {
-        "questionId" : 10,
-        "question" : "Who is a better kisser?",
-        "questionType" : "Which",
-        "intimicyLevel" : 2
     },
     {
         "questionId" : 11,
@@ -85,15 +67,9 @@
     },
     {
         "questionId" : 15,
-        "question" : "What would {possesive} ideal date be?",
+        "question" : "What's {possesive} ideal date?",
         "questionType" : "OpenIndividual",
         "intimicyLevel" : 2
-    },
-    {
-        "questionId" : 16,
-        "question" : "What is their pet name for you?",
-        "questionType" : "OpenIndividual",
-        "intimicyLevel" : 1
     },
     {
         "questionId" : 17,
@@ -120,12 +96,6 @@
         "intimicyLevel" : 1
     },
     {
-        "questionId" : 21,
-        "question" : "How does {possesive} like their steak cooked?",
-        "questionType" : "OpenIndividual",
-        "intimicyLevel" : 1
-    },
-    {
         "questionId" : 22,
         "question" : "If you won the lottery, what’s the first thing you’d buy together?",
         "questionType" : "OpenCouple",
@@ -134,12 +104,6 @@
     {
         "questionId" : 23,
         "question" : "Name {possesive} favorite restaurant.",
-        "questionType" : "OpenIndividual",
-        "intimicyLevel" : 1
-    },
-    {
-        "questionId" : 24,
-        "question" : "How does {possesive} like their eggs in the morning?",
         "questionType" : "OpenIndividual",
         "intimicyLevel" : 1
     },
@@ -159,6 +123,72 @@
         "questionId" : 27,
         "question" : "What was {possesive} first job?",
         "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 28,
+        "question" : "What is {possesive} favorite book?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 29,
+        "question" : "What is {possesive} favorite holiday?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 30,
+        "question" : "What is {possesive} favorite season?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 31,
+        "question" : "What is {possesive} favorite color?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 32,
+        "question" : "What is {possesive} favorite bonding activity?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 33,
+        "question" : "Where would {singular} choose to go on a dream vacation?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 34,
+        "question" : "who is more decisive?",
+        "questionType" : "Which",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 35,
+        "question" : "Which one of you is the biggest procrastinator?",
+        "questionType" : "Which",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 36,
+        "question" : "What are you both saving up for?",
+        "questionType" : "OpenCouple",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 37,
+        "question" : "What is {possesive} favorite Christmas movie?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 38,
+        "question" : "Which one of you cries the most?",
+        "questionType" : "Which",
         "intimicyLevel" : 1
     }
 ]

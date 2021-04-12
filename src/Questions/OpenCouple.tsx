@@ -1,17 +1,16 @@
 import { useState } from "react";
 import Button from "../Components/Button"
+import ParagraphInput from "../Components/ParagraphInput"
 function OpenIndividualQuestion(props: any) {
   const [answer, setAnswer] = useState<string>("");
   return (
     <>
-      <label>{props.question.question}</label>
-      <br />
-      <textarea
+      <ParagraphInput
+        label={props.question.question}
         value={answer}
-        onChange={(e) => setAnswer(e.target.value)}
+        onChange={(e : any) => setAnswer(e.target.value)}
       />
-      <br />
-      <Button className="ml-3" bgColor="yellow-500" onClick={() => { props.handleChange(answer); setAnswer("")}}>
+      <Button className="ml-3" onClick={() => { props.handleChange(answer); setAnswer("")}}>
         Next
       </Button>
     </>

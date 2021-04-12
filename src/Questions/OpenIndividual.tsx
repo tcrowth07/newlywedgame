@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Button from "../Components/Button"
-import ParagraphInput from "../Components/ParagraphInput"
+import Button from "../Components/Button";
+import ParagraphInput from "../Components/ParagraphInput";
 
 function OpenIndividualQuestion(props: any) {
   const [answerSelf, setAnswerSelf] = useState<string>("");
@@ -20,8 +20,8 @@ function OpenIndividualQuestion(props: any) {
   }
 
   function clear() {
-    setAnswerSelf("")
-    setGuessPartner("")
+    setAnswerSelf("");
+    setGuessPartner("");
   }
 
   return (
@@ -29,18 +29,22 @@ function OpenIndividualQuestion(props: any) {
       <ParagraphInput
         label={makeQuestion(props.question, true)}
         value={answerSelf}
-        onChange={(e : any) => setAnswerSelf(e.target.value)}
+        onChange={(e: any) => setAnswerSelf(e.target.value)}
         placeholder={makeQuestion(props.question, true)}
       />
-      <br />
       <ParagraphInput
         label={makeQuestion(props.question, false)}
         value={guessPartner}
-        onChange={(e : any) => setGuessPartner(e.target.value)}
+        onChange={(e: any) => setGuessPartner(e.target.value)}
         placeholder={makeQuestion(props.question, false)}
       />
-      <br />
-      <Button className="ml-3" bgColor="yellow-500" onClick={() => { props.handleChange(answerSelf, guessPartner); clear()}}>
+      <Button
+        className="ml-3"
+        onClick={() => {
+          props.handleChange(answerSelf, guessPartner);
+          clear();
+        }}
+      >
         Next
       </Button>
     </>

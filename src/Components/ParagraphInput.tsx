@@ -1,23 +1,19 @@
-import { useState } from "react";
 function ParagraphInput({
   name,
   children,
+  value,
   onChange,
   id,
   placeholder,
   label,
 }: any) {
-  const [active, setActive] = useState(false);
-
-  function handleActivation(e: any) {
-    setActive(!!e.target.value);
-  }
 
   return (
-    <div className="mb-3 bg-yellow-500 px-3 py-5 rounded-md">
+    <div className="mb-3 bg-green-100 px-3 py-5 rounded-md">
       <label className="text-xl" htmlFor={name}>{label}</label>
       <input
         type="text"
+        value={value}
         id={id}
         name={name}
         placeholder={placeholder}

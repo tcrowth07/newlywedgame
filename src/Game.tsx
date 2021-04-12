@@ -5,8 +5,7 @@ import OpenIndividualQuestion from "./Questions/OpenIndividual";
 import OpenCoupleQuestion from "./Questions/OpenCouple";
 import WhichQuestion from "./Questions/Which";
 import ScoreScreen from "./ScoreScreen";
-
-import Button from "./Components/Button"
+import Similarity from "./Helpers/Similarity"
 
 function Game(props: any) {
   let history = useHistory();
@@ -67,28 +66,12 @@ function Game(props: any) {
   function score() {
     setScoreScreen(true);
     if (
-      player1.guesses[currentQuestionIndex] ===
-      player2.answers[currentQuestionIndex]
-    ) {
-      let temp = player1;
-      temp.score += 10000;
-      setPlayer1(temp);
-    }
-    if (
-      player2.guesses[currentQuestionIndex] ===
-      player1.answers[currentQuestionIndex]
-    ) {
-      let temp = player2;
-      temp.score += 10000;
-      setPlayer2(temp);
-    }
-    if (
       gameQuestions[currentQuestionIndex].questionType === "OpenCouple" ||
       gameQuestions[currentQuestionIndex].questionType === "Which"
     ) {
       if (
-        player1.guesses[currentQuestionIndex] ===
-        player2.guesses[currentQuestionIndex]
+        Similarity(player1.guesses[currentQuestionIndex],
+        player2.guesses[currentQuestionIndex]) > 0.6
       ) {
         let temp = player1;
         temp.score += 10000;
@@ -96,6 +79,23 @@ function Game(props: any) {
         let temp2 = player2;
         temp2.score += 10000;
         setPlayer2(temp2);
+      }
+    } else {
+      if (
+        Similarity(player1.guesses[currentQuestionIndex],
+        player2.answers[currentQuestionIndex]!) > 0.6
+      ) {
+        let temp = player1;
+        temp.score += 10000;
+        setPlayer1(temp);
+      }
+      if (
+        Similarity(player2.guesses[currentQuestionIndex],
+        player1.answers[currentQuestionIndex]!) > 0.6
+      ) {
+        let temp = player2;
+        temp.score += 10000;
+        setPlayer2(temp);
       }
     }
   }
@@ -129,7 +129,7 @@ function Game(props: any) {
   }
 
   return (
-    <div className="main">
+    <>
       {!game ? (
         <h6>Loading game...</h6>
       ) : (
@@ -143,8 +143,8 @@ function Game(props: any) {
               setScoreScreen={(score: boolean) => setScoreScreen(score)}
             />
           ) : (
-            <div className="m-5">
-              <h3 className="bg-green-300 mb-7 rounded-md p-5 text-center text-white shadow-md font-bold text-3xl">{currentPlayer}'s turn</h3>
+            <>
+              <h3 className="bg-green-300 rounded-md p-5 text-center text-white shadow-md font-bold text-3xl">{currentPlayer}'s turn</h3>
               {gameQuestions[currentQuestionIndex]?.questionType ===
                 "OpenIndividual" && (
                 <OpenIndividualQuestion
@@ -177,11 +177,11 @@ function Game(props: any) {
                   player2={player2}
                 />
               )}
-            </div>
+            </>
           )}
         </>
       )}
-    </div>
+    </>
   );
 }
 
