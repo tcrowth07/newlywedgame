@@ -7,10 +7,11 @@ function OpenIndividualQuestion(props: any) {
     <>
       <ParagraphInput
         label={props.question.question}
+        placeholder={props.question.question}
         value={answer}
         onChange={(e : any) => setAnswer(e.target.value)}
       />
-      <Button className="ml-3" onClick={() => { props.handleChange(answer); setAnswer("")}}>
+      <Button className="ml-3 mb-6" onClick={() => { props.handleChange(answer); setAnswer("")}}>
         Next
       </Button>
     </>

@@ -1,4 +1,5 @@
 export default function similarity(s1 : string, s2 : string) {
+    if (s1 || s2) {
     let longer = s1;
     let shorter = s2;
     if (s1.length < s2.length) {
@@ -10,8 +11,10 @@ export default function similarity(s1 : string, s2 : string) {
       return 1.0;
     }
     return (longerLength - editDistance(longer, shorter)) / longerLength;
+  } else {
+    return 0
   }
-
+}
   function editDistance(s1 : string, s2 : string) {
     s1 = s1.toLowerCase();
     s2 = s2.toLowerCase();
@@ -37,4 +40,4 @@ export default function similarity(s1 : string, s2 : string) {
         costs[s2.length] = lastValue;
     }
     return costs[s2.length];
-  }
+  } 

@@ -6,6 +6,7 @@ import OpenCoupleQuestion from "./Questions/OpenCouple";
 import WhichQuestion from "./Questions/Which";
 import ScoreScreen from "./ScoreScreen";
 import Similarity from "./Helpers/Similarity"
+import { motion } from "framer-motion";
 
 function Game(props: any) {
   let history = useHistory();
@@ -31,7 +32,13 @@ function Game(props: any) {
     guesses: [],
     score: 0,
   });
+  const [slideX, setSlideX] = useState<string>("0");
+  const [slideY, setSlideY] = useState<string>("0");
+
   
+  const sleep = (milliseconds : number) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+  }
 
   function startGame(): void {
     setGameQuestions(chooseRandomQuestions(10));
@@ -53,7 +60,10 @@ function Game(props: any) {
     return randomQuestions;
   }
 
-  function next(): void {
+  async function next() {
+    setSlideX("-110%")
+    await sleep(200)
+    setSlideX("0")
     if (player1Turn) {
       setplayer1Turn(false);
     } else {
@@ -113,12 +123,15 @@ function Game(props: any) {
     next();
   }
 
-  if (!game) {
-    startGame();
+  function hideScore(score : boolean) {
+    setScoreScreen(score)
+    if (currentQuestionIndex > 1) {
+      history.push({ pathname: "/gameover", state: { player1, player2 } });
+    }
   }
 
-  if (currentQuestionIndex > 9) {
-    history.push({ pathname: "/gameover", state: { player1, player2 } });
+  if (!game) {
+    startGame();
   }
 
   let currentPlayer = "";
@@ -129,7 +142,11 @@ function Game(props: any) {
   }
 
   return (
-    <>
+    <motion.div
+      exit={{ opacity: 0, y:"-100vh", x:0}}
+      animate={{ opacity: 1, y:slideY, x:slideX}}
+      initial={{ opacity: 0, y:"-100vh", x:0 }}
+    >
       {!game ? (
         <h6>Loading game...</h6>
       ) : (
@@ -140,7 +157,8 @@ function Game(props: any) {
               currentQuestionIndex={currentQuestionIndex}
               player1={player1}
               player2={player2}
-              setScoreScreen={(score: boolean) => setScoreScreen(score)}
+              setScoreScreen={(score: boolean) => hideScore(score)}
+              setSlideY={(slideY: string) => setSlideY(slideY)}
             />
           ) : (
             <>
@@ -181,7 +199,7 @@ function Game(props: any) {
           )}
         </>
       )}
-    </>
+    </motion.div>
   );
 }
 

@@ -1,13 +1,13 @@
 export default function Footer() {
     return (
-    <footer className="bg-gray-700 w-full px-4 pb-20 mt-32">
+    <footer className="bg-gray-700 w-full px-4">
         <div className="flex items-center justify-between my-4">
             <p className="text-green-500">All rights reserved</p>
             <p className="inline-flex text-green-500 px-2">Built By Ty Crowther</p>
             <div className="flex items-center">
                 <a href="mailto:tyler.crowther@byu.edu">
                     <svg fill="none"  className="h-6 w-6 text-green-500 mr-6" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
                 </a>
                 <a href="https://www.linkedin.com/in/tyler-crowther/">

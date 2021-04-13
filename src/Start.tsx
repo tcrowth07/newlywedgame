@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
 import Button from "./Components/Button";
 import Input from "./Components/ParagraphInput";
+import { motion } from "framer-motion";
 
 function App() {
   let history = useHistory();
@@ -18,7 +19,11 @@ function App() {
     });
   }
   return (
-    <>
+    <motion.div
+      exit={{ opacity: 0, y:"-100vh"}}
+      animate={{ opacity: 1, y:0}}
+      initial={{ opacity: 0, y:"-100vh" }}
+    >
       <Input
         label="Player 1 Name"
         placeholder="Player 1 Name"
@@ -44,7 +49,7 @@ function App() {
           Start Game
         </Button>
       </div>
-    </>
+    </motion.div>
   );
 }
 export default App;

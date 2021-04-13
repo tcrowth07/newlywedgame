@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../Questions.css";
 import Button from "../Components/Button";
 
 function OpenIndividualQuestion(props: any) {

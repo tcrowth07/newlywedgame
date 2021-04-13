@@ -190,5 +190,53 @@
         "question" : "Which one of you cries the most?",
         "questionType" : "Which",
         "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 39,
+        "question" : "What is {possesive} silliest fear?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 40,
+        "question" : "What is {possesive} favorite ice cream flavor?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 41,
+        "question" : "How many cousins do {singular} have?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 42,
+        "question" : "What was {possesive} first pet called?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 43,
+        "question" : "What is {possesive} dream job?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 44,
+        "question" : "What is {possesive} least favorite housework task?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 45,
+        "question" : "What purchase is {singular} currently considering?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 46,
+        "question" : "What was {possesive} GPA in high school?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
     }
 ]

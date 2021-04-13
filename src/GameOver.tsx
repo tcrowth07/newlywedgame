@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 import Button from "./Components/Button";
+import { motion } from "framer-motion"
 function GameOver(props: any) {
   let history = useHistory();
   const player1 = props.location.state.player1;
@@ -14,7 +15,11 @@ function GameOver(props: any) {
     winnerText = "It's a tie!";
   }
   return (
-    <div className="mx-5">
+    <motion.div
+    exit={{ opacity: 0, y:"-100vh"}}
+    animate={{ opacity: 1, y:0}}
+    initial={{ opacity: 0, y:"-100vh" }}
+  >
       <h3 className="bg-green-300 mb-7 rounded-md p-5 text-center text-white shadow-md font-bold text-3xl">
         {winnerText}
       </h3>
@@ -34,7 +39,7 @@ function GameOver(props: any) {
       >
         Play Again
       </Button>
-    </div>
+    </motion.div>
   );
 }
 export default GameOver;

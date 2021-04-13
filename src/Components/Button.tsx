@@ -1,5 +1,4 @@
 function Button({
-  size,
   bgColor,
   textColor,
   children,

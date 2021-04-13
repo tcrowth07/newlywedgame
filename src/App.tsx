@@ -1,14 +1,31 @@
-import { Link } from "react-router-dom";
-import Button from "./Components/Button"
+import { Route, Switch, useLocation } from "react-router-dom";
+
+import Start from "./Start";
+import Game from "./Game";
+import Header from "./Components/Header";
+import GameOver from "./GameOver";
+import Footer from "./Components/Footer";
+import Menu from "./Menu";
+
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  let location = useLocation();
+
   return (
-    <div className="text-center">
-      <Link to="/start"><Button className="mx-5" bgColor="yellow-500" hoverColor="yellow-600">Play Single Device Mode</Button></Link><br /><br />
-      <Button bgColor="yellow-600" disabled={true}>Play Multi Device Mode</Button><br />
-      <div className="text-xs text-gray-500">(Coming Soon)</div>
-      <Button bgColor="yellow-600" disabled={true}>Play Multi Couple Mode</Button>
-      <div className="text-xs text-gray-500">(Coming Soon)</div>
+    <div className="flex flex-col h-screen justify-between">
+      <Header />
+      <div className="container mx-auto px-4 mt-5 mb-auto">
+        <AnimatePresence exitBeforeEnter>
+          <Switch location={location} key={location.pathname}>
+            <Route exact path="/play" component={Game} />
+            <Route exact path="/start" component={Start} />
+            <Route exact path="/gameover" component={GameOver} />
+            <Route exact path="/" component={Menu} />
+          </Switch>
+        </AnimatePresence>
+      </div>
+      <Footer />
     </div>
   );
 }
