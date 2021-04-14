@@ -156,12 +156,6 @@
         "intimicyLevel" : 1
     },
     {
-        "questionId" : 33,
-        "question" : "Where would {singular} choose to go on a dream vacation?",
-        "questionType" : "OpenIndividual",
-        "intimicyLevel" : 1
-    },
-    {
         "questionId" : 34,
         "question" : "Who is more decisive?",
         "questionType" : "Which",
@@ -224,12 +218,6 @@
     {
         "questionId" : 44,
         "question" : "What is {possesive} least favorite housework task?",
-        "questionType" : "OpenIndividual",
-        "intimicyLevel" : 1
-    },
-    {
-        "questionId" : 45,
-        "question" : "What purchase is {singular} currently considering?",
         "questionType" : "OpenIndividual",
         "intimicyLevel" : 1
     },
