@@ -27,7 +27,7 @@ function OpenIndividualQuestion(props: any) {
         else return firstPart + props.player1.name + secondPart;
       }
     } else {
-      return question.question
+      return question.question;
     }
   }
 

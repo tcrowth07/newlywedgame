@@ -1,5 +1,6 @@
 import Button from "./Components/Button";
 import Similarity from "./Helpers/Similarity"
+import Sleep from "./Helpers/Sleep"
 function ScoreScreen(props: any) {
   const COMPARE_TOLERANCE = 0.6
   const player1Name = props.player1.name;
@@ -8,10 +9,6 @@ function ScoreScreen(props: any) {
   const player2Guess = props.player2.guesses[props.currentQuestionIndex - 1];
   const player1Answer = props.player1.answers[props.currentQuestionIndex - 1];
   const player2Answer = props.player2.answers[props.currentQuestionIndex - 1];
-
-  const sleep = (milliseconds : number) => {
-    return new Promise(resolve => setTimeout(resolve, milliseconds))
-  }
 
   return (
     <>
@@ -71,7 +68,7 @@ function ScoreScreen(props: any) {
           {player2Name}: {props.player2.score}
         </p>
         <Button
-          onClick={async () => {props.setScoreScreen(false); props.setSlideY("-100vh"); await sleep(400); props.setSlideY("0")}}
+          onClick={async () => {props.setScoreScreen(false); props.setSlideY("-100vh"); await Sleep(400); props.setSlideY("0")}}
           className="mb-6 ml-5"
         >
           Continue

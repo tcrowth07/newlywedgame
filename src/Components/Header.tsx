@@ -1,11 +1,11 @@
 import React from "react";
-import { FaFacebookSquare } from 'react-icons/fa';
-import { FaTwitterSquare } from 'react-icons/fa';
-import { FaPinterestSquare } from 'react-icons/fa';
-import { FaBars } from 'react-icons/fa';
-import { Link } from 'react-router-dom'
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaTwitterSquare } from "react-icons/fa";
+import { FaPinterestSquare } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-export default function Navbar({ fixed } : any) {
+export default function Navbar({ fixed }: any) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
@@ -36,26 +36,32 @@ export default function Navbar({ fixed } : any) {
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="nav-item">
                 <a
+                  target="__blank"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                   href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewlywedgame.tylercrowther.com%2F&amp;src=sdkpreparse"
                 >
-                  <FaFacebookSquare /><span className="ml-2">Share</span>
+                  <FaFacebookSquare />
+                  <span className="ml-2">Share</span>
                 </a>
               </li>
               <li className="nav-item">
                 <a
+                  target="__blank"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                   href="https://twitter.com/intent/tweet?text=Check%20out%20this%20new%20game%20https://newlywedgame.tylercrowther.com/"
                 >
-                  <FaTwitterSquare /><span className="ml-2">Tweet</span>
+                  <FaTwitterSquare />
+                  <span className="ml-2">Tweet</span>
                 </a>
               </li>
               <li className="nav-item">
                 <a
+                  target="__blank"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                   href="https://www.pinterest.com/pin/create/button/"
                 >
-                  <FaPinterestSquare /><span className="ml-2">Pin</span>
+                  <FaPinterestSquare />
+                  <span className="ml-2">Pin</span>
                 </a>
               </li>
             </ul>

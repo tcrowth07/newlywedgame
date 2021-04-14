@@ -20,9 +20,9 @@ function App() {
   }
   return (
     <motion.div
-      exit={{ opacity: 0, y:"-100vh"}}
-      animate={{ opacity: 1, y:0}}
-      initial={{ opacity: 0, y:"-100vh" }}
+      exit={{ opacity: 0, y: "-100vh" }}
+      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: "-100vh" }}
     >
       <Input
         label="Player 1 Name"

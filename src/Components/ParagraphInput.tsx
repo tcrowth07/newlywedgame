@@ -7,10 +7,11 @@ function ParagraphInput({
   placeholder,
   label,
 }: any) {
-
   return (
     <div className="mb-3 bg-green-100 px-3 py-5 rounded-md">
-      <label className="text-xl" htmlFor={name}>{label}</label>
+      <label className="text-xl" htmlFor={name}>
+        {label}
+      </label>
       <input
         type="text"
         value={value}

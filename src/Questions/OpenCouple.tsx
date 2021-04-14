@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Button from "../Components/Button"
-import ParagraphInput from "../Components/ParagraphInput"
+import Button from "../Components/Button";
+import ParagraphInput from "../Components/ParagraphInput";
 function OpenIndividualQuestion(props: any) {
   const [answer, setAnswer] = useState<string>("");
   return (
@@ -9,9 +9,15 @@ function OpenIndividualQuestion(props: any) {
         label={props.question.question}
         placeholder={props.question.question}
         value={answer}
-        onChange={(e : any) => setAnswer(e.target.value)}
+        onChange={(e: any) => setAnswer(e.target.value)}
       />
-      <Button className="ml-3 mb-6" onClick={() => { props.handleChange(answer); setAnswer("")}}>
+      <Button
+        className="ml-3 mb-6"
+        onClick={() => {
+          props.handleChange(answer);
+          setAnswer("");
+        }}
+      >
         Next
       </Button>
     </>

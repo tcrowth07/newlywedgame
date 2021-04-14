@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 
 function Menu() {
   return (
-    <motion.div animate={{opacity: 1}} initial={{opacity: 0}} className="text-center">
+    <motion.div
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      className="text-center"
+    >
       <Link to="/start">
         <Button className="mx-5" bgColor="yellow-500" hoverColor="yellow-600">
           Play Single Device Mode

@@ -5,7 +5,7 @@ function Button({
   disabled,
   onClick,
   className,
-  hoverColor
+  hoverColor,
 }: any) {
   return (
     <button
@@ -13,7 +13,9 @@ function Button({
       disabled={disabled}
       className={
         className +
-        ` mt-3 bg-${bgColor} text-${textColor} font-bold py-2 px-4 rounded ${hoverColor && "hover:bg-" + hoverColor}`
+        ` mt-3 bg-${bgColor} text-${textColor} font-bold py-2 px-4 rounded ${
+          hoverColor && "hover:bg-" + hoverColor
+        }`
       }
     >
       {children}
