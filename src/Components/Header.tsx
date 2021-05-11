@@ -38,7 +38,7 @@ export default function Navbar({ fixed }: any) {
                 <a
                   target="__blank"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewlywedgame.tylercrowther.com%2F&amp;src=sdkpreparse"
+                  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewlywedgame.online%2F&amp;src=sdkpreparse"
                 >
                   <FaFacebookSquare />
                   <span className="ml-2">Share</span>
@@ -48,7 +48,7 @@ export default function Navbar({ fixed }: any) {
                 <a
                   target="__blank"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="https://twitter.com/intent/tweet?text=Check%20out%20this%20new%20game%20https://newlywedgame.tylercrowther.com/"
+                  href="https://twitter.com/intent/tweet?text=Check%20out%20this%20new%20game%20https://newlywedgame.online/"
                 >
                   <FaTwitterSquare />
                   <span className="ml-2">Tweet</span>
