@@ -31,7 +31,7 @@ function ScoreScreen(props: any) {
         );
       }
     }
-  }, [player1Guess, player2Guess]);
+  }, [player1Guess, player2Guess, player1Answer, player2Answer]);
 
   return (
     <>
