@@ -1,5 +1,6 @@
 function Button({
   bgColor,
+  color,
   textColor,
   children,
   disabled,
@@ -13,7 +14,7 @@ function Button({
       disabled={disabled}
       className={
         className +
-        ` mt-3 bg-${bgColor} text-${textColor} font-bold py-2 px-4 rounded ${
+        ` mt-3 ${bgColor} ${color} text-${textColor} font-bold py-2 px-4 rounded ${
           hoverColor && "hover:bg-" + hoverColor
         }`
       }

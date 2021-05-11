@@ -51,6 +51,7 @@ function Game(props: any) {
   let next: () => void;
   let storeAnswers: (answerSelf: string | null, guessPartner: string) => void;
   let hideScore: (score: boolean) => void;
+  let overrideScore: (player: number, amount: number) => void;
 
   ////////////////////////////////////////
   /////       Private Methods        /////
@@ -154,6 +155,19 @@ function Game(props: any) {
     }
   };
 
+  overrideScore = function (player: number, amount: number): void {
+    if (player === 1) {
+      let temp = player1;
+      temp.score += amount;
+      setPlayer1(temp);
+    }
+    if (player === 2) {
+      let temp = player2;
+      temp.score += amount;
+      setPlayer2(temp);
+    }
+  };
+
   ////////////////////////////////////////
   /////            Logic             /////
   ////////////////////////////////////////
@@ -184,6 +198,9 @@ function Game(props: any) {
               player2={player2}
               setScoreScreen={(score: boolean) => hideScore(score)}
               setSlideY={(slideY: string) => setSlideY(slideY)}
+              overrideScore={(player: number, amount: number) =>
+                overrideScore(player, amount)
+              }
             />
           ) : (
             <>

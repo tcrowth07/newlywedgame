@@ -35,7 +35,7 @@ function GameOver(props: any) {
         onClick={() => {
           history.push("/start");
         }}
-        bgColor="yellow-500"
+        bgColor="bg-yellow-500"
       >
         Play Again
       </Button>

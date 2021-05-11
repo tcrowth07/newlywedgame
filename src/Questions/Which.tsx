@@ -14,7 +14,7 @@ function OpenIndividualQuestion(props: any) {
       <h3 className="text-2xl">{props.question.question}</h3>
       <Button
         onClick={() => setAnswer(currentPlayerName)}
-        bgColor={answer === currentPlayerName ? "yellow-600" : "gray-200"}
+        bgColor={answer === currentPlayerName ? "bg-yellow-600" : "bg-gray-200"}
         hoverColor=""
         className="mr-5 px-10"
       >
@@ -22,7 +22,7 @@ function OpenIndividualQuestion(props: any) {
       </Button>
       <Button
         onClick={() => setAnswer(otherPlayerName)}
-        bgColor={answer === otherPlayerName ? "yellow-600" : "gray-200"}
+        bgColor={answer === otherPlayerName ? "bg-yellow-600" : "bg-gray-200"}
         hoverColor=""
         className="px-10"
       >

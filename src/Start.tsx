@@ -41,7 +41,7 @@ function App() {
       </Input>
       <div className="text-center">
         <Button
-          bgColor="yellow-500"
+          bgColor="bg-yellow-500"
           onClick={() => {
             startGame();
           }}
