@@ -55,7 +55,7 @@ function ScoreScreen(props: any) {
               props.overrideScore(1, 1000);
             }}
             bgColor="bg-green-300"
-            className="mr-5"
+            className="ml-5"
           >
             Mark as Correct
           </Button>
