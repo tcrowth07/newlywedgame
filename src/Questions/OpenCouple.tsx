@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../Components/Button";
 import ParagraphInput from "../Components/ParagraphInput";
+
 function OpenIndividualQuestion(props: any) {
   const [answer, setAnswer] = useState<string>("");
   return (

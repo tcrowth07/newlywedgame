@@ -199,7 +199,7 @@
     },
     {
         "questionId" : 41,
-        "question" : "How many cousins do {singular} have?",
+        "question" : "How many cousins {do} {singular} have?",
         "questionType" : "OpenIndividual",
         "intimicyLevel" : 1
     },
@@ -241,8 +241,176 @@
     },
     {
         "questionId" : 49,
-        "question" : "How many kids does {",
+        "question" : "How would {singular} spend 4 hours alone?",
         "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 51,
+        "question" : "Do you have a couple song? What is it?",
+        "questionType" : "OpenCouple",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 52,
+        "question" : "What is {possesive} guilty pleasure?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 53,
+        "question" : "What is {possesive} favorite fast food restaurant?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 54,
+        "question" : "Who is more sentimental?",
+        "questionType" : "Which",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 55,
+        "question" : "After how many dates did you kiss?",
+        "questionType" : "OpenCouple",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 56,
+        "question" : "Who caught the garter at your wedding?",
+        "questionType" : "OpenCouple",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 57,
+        "question" : "{be} {singular} more like {posPronoun} mom or dad?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 58,
+        "question" : "If {singular} had to choose an actor to play {reflective} in a movie, who would {pronoun} choose?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 59,
+        "question" : "{be} {singular} a pessimist, an optimist, or a realist?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 60,
+        "question" : "Who spends the most money on personal items?",
+        "questionType" : "Which",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 61,
+        "question" : "What {be} {singular} most proud of?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 62,
+        "question" : "{be} {singular} a side, back, or stomach sleeper?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 63,
+        "question" : "What did {singular} get {otherSingular} for your first Christmas together?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 64,
+        "question" : "What was the first car {singular} ever owned?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 65,
+        "question" : "What was the first trip you two took together?",
+        "questionType" : "OpenCouple",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 66,
+        "question" : "What {pastBe} {singular} wearing the first time you met?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 67,
+        "question" : "{be} {singular} have a catch phrase? What is it?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 68,
+        "question" : "What is {possesive} favorite type of food?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 69,
+        "question" : "What {do} {singular} talk about the most?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 70,
+        "question" : "If {singular} could spend $500 on anything, how would {pronoun} spend it?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 71,
+        "question" : "If {singular} had to take one object to a deserted island, what would {pronoun} take?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 72,
+        "question" : "If {singular} could pick up and go anywhere in the world right now, where would {pronoun} go?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 73,
+        "question" : "What is {possesive} favorite bonding activity?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 74,
+        "question" : "If {singular} had to eat one food for the rest of {posPronoun} life, what would it be?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 75,
+        "question" : "What super power would {singular} choose?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 76,
+        "question" : "{singular} {have} $50 to spend on {otherSingular}. What do {pronoun} buy?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 77,
+        "question" : "If {singular} could live anywhere in the world, where would it be?",
+        "questionType" : "OpenIndividual",
+        "intimicyLevel" : 1
+    },
+    {
+        "questionId" : 78,
+        "question" : "Out of the two of you, who is more decisive?",
+        "questionType" : "Which",
         "intimicyLevel" : 1
     }
 ]

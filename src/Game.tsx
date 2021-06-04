@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import questions from "./questions.json";
+import { Question } from "./Types/QuestionType";
+import { Player } from "./Types/PlayerType";
 import OpenIndividualQuestion from "./Questions/OpenIndividual";
 import OpenCoupleQuestion from "./Questions/OpenCouple";
 import WhichQuestion from "./Questions/Which";
@@ -248,21 +250,3 @@ function Game(props: any) {
 }
 
 export default Game;
-
-////////////////////////////////////////
-/////            Types             /////
-////////////////////////////////////////
-type Question = {
-  questionId: number;
-  question: string;
-  questionType: string;
-  intimicyLevel: number;
-};
-
-type Player = {
-  playerNum: number;
-  name: string;
-  answers: Array<string | null>;
-  guesses: Array<string>;
-  score: number;
-};

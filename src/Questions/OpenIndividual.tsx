@@ -1,34 +1,71 @@
 import { useState } from "react";
 import Button from "../Components/Button";
 import ParagraphInput from "../Components/ParagraphInput";
+import { Question } from "../Types/QuestionType";
 
 function OpenIndividualQuestion(props: any) {
   const [answerSelf, setAnswerSelf] = useState<string>("");
   const [guessPartner, setGuessPartner] = useState<string>("");
 
-  function makeQuestion(question: Question, selfQuestion: boolean): string {
-    let start = question.question.indexOf("{");
-    let end = question.question.indexOf("}");
-    let type: String = question.question.slice(start, end + 1);
-    let firstPart: String = question.question.slice(0, start);
-    let secondPart: String = question.question.slice(end + 1);
-    if (type === "{possesive}") {
-      if (selfQuestion) return firstPart + "your" + secondPart;
-      else {
-        if (props.player1Turn)
-          return firstPart + props.player2.name + "'s" + secondPart;
-        else return firstPart + props.player1.name + "'s" + secondPart;
+  function makeQuestion(questionObj: Question, selfQuestion: boolean): string {
+    let question = questionObj.question;
+    let formatedQuestion = "";
+    let type = "";
+    for (let i = 0; i < question.length; i++) {
+      if (question[i] === "{") {
+        for (let j = i; j < question.length; j++) {
+          if (question[j] === "}") {
+            i = j;
+            break;
+          } else type += question[j];
+        }
+
+        //conditional rendering for tags in string
+        if (type === "{singular") {
+          if (selfQuestion) formatedQuestion += "you";
+          else
+            formatedQuestion += props.player1Turn
+              ? props.player2.name
+              : props.player1.name;
+        } else if (type === "{possesive") {
+          if (selfQuestion) formatedQuestion += "your";
+          else
+            formatedQuestion += props.player1Turn
+              ? props.player2.name + "'s"
+              : props.player1.name + "'s";
+        } else if (type === "{be") {
+          if (selfQuestion) formatedQuestion += "are";
+          else formatedQuestion += "is";
+        } else if (type === "{posPronoun") {
+          if (selfQuestion) formatedQuestion += "your";
+          else formatedQuestion += "their";
+        } else if (type === "{do") {
+          if (selfQuestion) formatedQuestion += "do";
+          else formatedQuestion += "does";
+        } else if (type === "{reflective") {
+          if (selfQuestion) formatedQuestion += "yourself";
+          else formatedQuestion += "his/herself";
+        } else if (type === "{pronoun") {
+          if (selfQuestion) formatedQuestion += "you";
+          else formatedQuestion += "they";
+        } else if (type === "{otherSingular") {
+          if (selfQuestion) formatedQuestion += props.player1Turn
+            ? props.player2.name
+            : props.player1.name;
+          else formatedQuestion += "you"
+        } else if (type === "{pastBe") {
+          if (selfQuestion) formatedQuestion += "were";
+          else formatedQuestion += "was";
+        } else if (type === "{have") {
+          if (selfQuestion) formatedQuestion += "have";
+          else formatedQuestion += "has";
+        } 
+        type = "";
+      } else {
+        formatedQuestion += question[i];
       }
-    } else if (type === "{singular}") {
-      if (selfQuestion) return firstPart + "you" + secondPart;
-      else {
-        if (props.player1Turn)
-          return firstPart + props.player2.name + secondPart;
-        else return firstPart + props.player1.name + secondPart;
-      }
-    } else {
-      return question.question;
     }
+    return formatedQuestion[0].toUpperCase() + formatedQuestion.substring(1);
   }
 
   function clear() {
@@ -63,10 +100,3 @@ function OpenIndividualQuestion(props: any) {
   );
 }
 export default OpenIndividualQuestion;
-
-type Question = {
-  questionId: number;
-  question: string;
-  questionType: string;
-  intimicyLevel: number;
-};
