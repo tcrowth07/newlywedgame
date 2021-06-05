@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import emailjs from 'emailjs-com';
+import { useHistory } from "react-router-dom";
+
 
 function Feedback() {
-
+    let history = useHistory();
     function sendEmail(e : any) {
         e.preventDefault();
     
@@ -12,6 +14,7 @@ function Feedback() {
           }, (error) => {
               console.log(error.text);
           });
+        history.push("/feedback-confirmation")
       }
 
   return (
