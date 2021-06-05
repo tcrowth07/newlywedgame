@@ -6,6 +6,7 @@ import Header from "./Components/Header";
 import GameOver from "./GameOver";
 import Footer from "./Components/Footer";
 import Menu from "./Menu";
+import Feedback from "./Feedback";
 
 import { AnimatePresence } from "framer-motion";
 
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/play" component={Game} />
             <Route exact path="/start" component={Start} />
             <Route exact path="/gameover" component={GameOver} />
+            <Route exact path="/feedback" component={Feedback} />
             <Route exact path="/" component={Menu} />
           </Switch>
         </AnimatePresence>

@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom'
 export default function Footer() {
   return (
     <footer className="bg-gray-700 w-full px-4">
       <div className="flex items-center justify-between my-2 text-xs">
         <p className="text-green-500">&copy; {(new Date().getFullYear())} Built by Ty Crowther</p>
-        <p className="inline-flex text-green-500 px-2"></p>
+        <p className="inline-flex text-green-500 px-2"><Link to="/feedback">Share Feedback</Link></p>
         <div className="flex items-center">
           <a href="mailto:tyler.crowther@byu.edu">
             <svg

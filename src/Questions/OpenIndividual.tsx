@@ -49,17 +49,18 @@ function OpenIndividualQuestion(props: any) {
           if (selfQuestion) formatedQuestion += "you";
           else formatedQuestion += "they";
         } else if (type === "{otherSingular") {
-          if (selfQuestion) formatedQuestion += props.player1Turn
-            ? props.player2.name
-            : props.player1.name;
-          else formatedQuestion += "you"
+          if (selfQuestion)
+            formatedQuestion += props.player1Turn
+              ? props.player2.name
+              : props.player1.name;
+          else formatedQuestion += "you";
         } else if (type === "{pastBe") {
           if (selfQuestion) formatedQuestion += "were";
           else formatedQuestion += "was";
         } else if (type === "{have") {
           if (selfQuestion) formatedQuestion += "have";
           else formatedQuestion += "has";
-        } 
+        }
         type = "";
       } else {
         formatedQuestion += question[i];
