@@ -1,10 +1,5 @@
-import { useHistory } from "react-router-dom";
-import Button from "./Components/Button";
-import Input from "./Components/ParagraphInput";
 import { motion } from "framer-motion";
 import emailjs from 'emailjs-com';
-import { BsFillPersonFill } from 'react-icons/bs'
-import { BsEnvelopeFill } from 'react-icons/bs'
 
 function Feedback() {
 
@@ -47,8 +42,6 @@ function Feedback() {
             <button type="submit" className="p2 font-medium shadow-md rounded-none p-2 w-full focus:outline-none focus:ring-2 focus:ring-offset-2 border border-gray-900 dark:border-gray-100 bg-gray-700 dark:bg-gray-200 text-green-500 dark:text-gray-800 hover:bg-gray-900 dark:hover:bg-gray-100"><i className="fas fa-check"></i> Send</button>
         </div>
     </form>
-
-
     </motion.div>
   );
 }
