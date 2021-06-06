@@ -6,17 +6,20 @@ import { motion } from "framer-motion";
 function App() {
   let history = useHistory();
   function startGame() {
-    history.push({
-      pathname: "/play",
-      state: {
-        player1Name: (document.getElementById(
-          "player1Name"
-        ) as HTMLInputElement)?.value,
-        player2Name: (document.getElementById(
-          "player2Name"
-        ) as HTMLInputElement)?.value,
-      },
-    });
+    let player1Name = (document.getElementById("player1Name") as HTMLInputElement)?.value
+    let player2Name = (document.getElementById("player2Name") as HTMLInputElement)?.value
+
+    if(player1Name !== "" && player2Name !== "") {
+      history.push({
+        pathname: "/play",
+        state: {
+          player1Name,
+          player2Name
+        },
+      });
+    } else {
+      document.getElementById("error")!.innerHTML = "Both players need a name"
+    }
   }
   return (
     <motion.div
@@ -39,6 +42,7 @@ function App() {
       >
         Player 2 Name
       </Input>
+      <span id="error" style={{color: "red"}}></span>
       <div className="text-center">
         <Button
           bgColor="bg-yellow-500"

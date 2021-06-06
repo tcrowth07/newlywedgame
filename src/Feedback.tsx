@@ -7,11 +7,8 @@ function Feedback() {
     let history = useHistory();
     function sendEmail(e: any) {
       e.preventDefault();
-
-      //@ts-ignore
-      if (!e.target[0].value) { document.getElementById('nameError').innerHTML = "Name Required" }
-      //@ts-ignore
-      if (!e.target[1].value) { document.getElementById('messageError').innerHTML = "Message Required" }
+      if (!e.target[0].value) { document.getElementById('nameError')!.innerHTML = "Name Required" }
+      if (!e.target[1].value) { document.getElementById('messageError')!.innerHTML = "Message Required" }
       if (e.target[0].value && e.target[1].value) {
         emailjs
           .sendForm(
